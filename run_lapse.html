@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ps4 lapse</title>
+<style>
+  html, body {
+  margin:0;
+  padding:0;
+  min-height:100vh;
+  background-image: url('ShehapBack.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #0b1d10; /* لون احتياطي في حال لم تتحمل الصورة */
+  color:#c8ced8;
+  font:15px/1.45 "Segoe UI", system-ui, sans-serif;
+}
+  #wrap {
+  max-width: 900px;          /* يصغر العرض */
+  margin: 30px auto;         /* يوسطه في المنتصف */
+  padding: 20px 24px;        /* مسافة داخلية مريحة */
+  background: rgba(11, 13, 16, 0.45);  /* شفافية 45% */
+  backdrop-filter: blur(10px);          /* تأثير الزجاج */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;       /* زوايا دائرية */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* حد خفيف */
+  box-shadow: 0 8px 32px rgba(22, 26, 32, 0.90);
+}
+  #state { font-size:22px; font-weight:700; margin:0 0 10px; }
+  #out { white-space:pre-wrap; font:12px/1.45 Consolas, monospace;
+         background: rgba(17, 21, 27, 0.25); border:1px solid #1e2732; border-radius:5px;
+         padding:10px 12px; height:calc(100vh - 141px); overflow-y:auto; }
+  .ok { color:#7fd0a0; } .bad { color:#d08a7f; } .warn { color:#d8c07f; }
+  #brand { text-align:center; padding:8px 10px; background:#0e1116;
+           border-bottom:1px solid #1e2732; }
+  #brand img { width:28px; height:28px; margin-right:8px; border-radius:50%;
+               vertical-align:middle; }
+  #brand b { font-size:15px; font-weight:700; letter-spacing:.14em;
+             color:#e6ebf2; vertical-align:middle; }
+</style>
+</head>
+<body>
+<div id="brand"><img src="shehap_raw.jpg" alt="" width="28" height="28"><b>Shehap Store</b></div>
+<div id="wrap">
+  <div id="state">loading lapse chain...</div>
+  <div id="out"></div>
+</div>
+<script type="module">import "./chain_lapse.js";</script>
+</body>
+</html>
